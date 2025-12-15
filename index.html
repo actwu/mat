@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>mat demo • nay</title>
+<meta name="description" content="well just demo of material ui">
+<meta name="keywords" content="material, ui">
+<meta name="author" content="nay">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2064%2064'%3E%0A%3Ccircle%20cx%3D'32'%20cy%3D'32'%20r%3D'32'%20fill%3D'%23000000'%2F%3E%0A%3Ctext%20x%3D'32'%20y%3D'46'%20font-size%3D'38'%20font-weight%3D'700'%20text-anchor%3D'middle'%20fill%3D'%23ffffff'%20font-family%3D'Arial'%20letter-spacing%3D'-1'%3E%F0%9F%94%B5%3C%2Ftext%3E%0A%3C%2Fsvg%3E">
+<link rel="canonical" href="">
+<meta property="og:title" content="mat demo • nay">
+<meta property="og:description" content="well just demo of material ui">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta property="og:type" content="">
+<meta property="og:site_name" content="mat sample">
+<meta property="og:locale" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="mat demo • nay">
+<meta name="twitter:description" content="well just demo of material ui">
+<meta name="twitter:image" content="">
+<meta name="twitter:site" content="">
+<meta name="twitter:creator" content="">
+
+<meta name='google-site-verification' content=''>
+<meta name='msvalidate.01' content=''>
+
+<link rel="manifest" href="manifest.json">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"mat sample","url":"","logo":"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2064%2064'%3E%0A%3Ccircle%20cx%3D'32'%20cy%3D'32'%20r%3D'32'%20fill%3D'%23000000'%2F%3E%0A%3Ctext%20x%3D'32'%20y%3D'46'%20font-size%3D'38'%20font-weight%3D'700'%20text-anchor%3D'middle'%20fill%3D'%23ffffff'%20font-family%3D'Arial'%20letter-spacing%3D'-1'%3E%F0%9F%94%B5%3C%2Ftext%3E%0A%3C%2Fsvg%3E","description":"well just demo of material ui"}</script>
+<style>
+* {border:unset; outline:unset; box-sizing:border-box;}
+body {
+  font-family:sans-serif;
+  padding:20px;
+  margin:0 auto;
+  max-width:720px;
+  background:#0b0c16;
+
+  display:flex; flex-direction: column;
+  color:#f2f2ff;
+}
+
+h1,h2,h3,p {display:inline-flex;margin:0;}
+h1 {letter-spacing:-1px;font-size:40px;}
+h2 {letter-spacing:-1px;font-size:28px;}
+h3 {letter-spacing:-1px;font-size:20px;}
+
+/* container */
+cont {
+  display:flex;
+  flex-direction: column;
+  gap:10px;
+  margin-bottom:20px;
+  padding:10px;
+  border-radius:8px;
+}
+span, span * {display:flex; flex-wrap:wrap; gap:10px;}
+
+/* base btn */
+btn {
+  display:inline-flex;
+  align-items:center;
+  font-weight:600;
+  padding:12px 16px;
+  border-radius:12px;
+  font-size:16px;
+  cursor:pointer;
+  user-select:none;
+  transition:all 0.2s;
+}
+
+/* child spacing */
+btn > * { font-weight:bold; }
+
+/* THEMES */
+::placeholder { color:#ccc; }
+
+/* RED */
+[r] { background:#ffcdd2; color:#b71c1c; }
+[r] > * { filter: brightness(0) saturate(80%) invert(22%) sepia(89%) saturate(2100%) hue-rotate(330deg) brightness(80%) contrast(70%); }
+[r2] { background:#822035; color:#ffcdd2; }
+[r2] > * { filter: brightness(0) saturate(90%) invert(80%) sepia(40%) saturate(12%) hue-rotate(110deg) brightness(10) contrast(80%); }
+
+/* BLUE */
+[b] { background:#bbdefb; color:#0d47a1; }
+[b] > * { filter: brightness(0) saturate(100%) invert(24%) sepia(91%) saturate(2250%) hue-rotate(205deg) brightness(95%) contrast(59%); }
+[b2] { background:#233f70; color:#bbdefb; }
+[b2] > * { filter: brightness(0) saturate(100%) invert(58%) sepia(99%) saturate(30) hue-rotate(204deg) brightness(155%) contrast(90%); }
+
+/* YELLOW */
+[y] { background:#f4dba4; color:#ad5318; }
+[y2] > * { filter: brightness(80) saturate(30%) invert(30%) sepia(99%) saturate(100%) hue-rotate(12deg) brightness(98%) contrast(120%); }
+[y2] { background:#995d2c; color:#fff3e0;}
+[y] > * { filter: invert(58%) sepia(120%) saturate(920%) hue-rotate(4deg) brightness(90%) contrast(90%); }
+
+/* GREEN */
+[g] { background:#c8e6c9 ; color:#1b5e20; }
+[g] > * { filter: brightness(0) saturate(100%) invert(80%) sepia(60%) saturate(409%) hue-rotate(90deg) brightness(55%) contrast(100%); }
+[g2] { background:#2c7249; color:#c8e6c9; }
+[g2] > * { filter: invert(1%) sepia(180%) saturate(110%) hue-rotate(89deg) brightness(98%) contrast(90%); }
+
+/* Dark-themed containers */
+[rt] { background:#512230; color:#fff; padding:12px; border-radius:12px; }
+[rt] textarea {background:#9b4256;}    
+[bt] { background:#262a47; color:#fff; padding:12px; border-radius:12px; }
+[bt] textarea {background:#484d72;}    
+[yt] { background:#563923; color:#fff; padding:12px; border-radius:12px; }
+[yt] textarea {background:#bf7442;}    
+[gt] { background:#213225; color:#fff; padding:12px; border-radius:12px; }
+[gt] textarea {background:#3c6d46;}    
+
+/* Textareas */
+textarea {
+  font-family:sans-serif;
+  font-size:16px;
+  padding:12px 14px;
+  border-radius:8px;
+  flex:1;
+  background:#2b2b2b;
+  color:#fff;
+  outline:none;
+  transition:border 0.2s, box-shadow 0.2s, background 0.2s;
+  resize:vertical;
+  min-height:200px;
+}
+
+
+
+/* RED THEME RANGE */
+[rt] input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 6px;
+  background: #9b4256;
+  outline: none;
+}
+[rt] input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+[rt] input[type=range]:hover::-webkit-slider-thumb {
+  transform: scale(1.1);
+}
+
+/* BLUE THEME RANGE */
+[bt] input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 6px;
+  background: #484d72;
+  outline: none;
+}
+[bt] input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+[bt] input[type=range]:hover::-webkit-slider-thumb {
+  transform: scale(1.1);
+}
+
+/* YELLOW THEME RANGE */
+[yt] input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 6px;
+  background: #bf7442;
+  outline: none;
+}
+[yt] input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+[yt] input[type=range]:hover::-webkit-slider-thumb {
+  transform: scale(1.1);
+}
+
+/* GREEN THEME RANGE */
+[gt] input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 6px;
+  background: #3c6d46;
+  outline: none;
+}
+[gt] input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+[gt] input[type=range]:hover::-webkit-slider-thumb {
+  transform: scale(1.1);
+}
+
+
+
+
+
+</style>
+</head>
+<body >
+
+<cont>
+<h1>material</h1>
+<h2>html</h2>
+<h3> UI Demo</h3>
+</cont>
+
+<cont bt>
+<h1>Stats sample </h1>
+  
+<span>
+<btn r><span>🩸 12</span></btn>
+  <btn b><span>👁️ 8</span></btn>
+  <btn y><span>⭐ Stars</span></btn>
+  <btn g><span>✔ Raa</span></btn>
+
+  <btn r2><span>🍓 12</span></btn>
+  <btn b2><span>🎉 10</span></btn>
+  <btn y2><span>👤 2</span></btn>
+  <btn g2><span>☘️ Macha</span></btn>
+</span>
+
+</cont>
+
+<cont rt>
+  <textarea placeholder="Red theme textarea..."></textarea>
+<input type="range" min="0" max="100" value="50">
+<span>
+  <btn r>Submit</btn>
+  <btn r2>Cancel</btn>
+</span>
+</cont>
+
+<cont bt>
+  <textarea placeholder="Blue theme textarea..."></textarea>
+<input type="range" min="0" max="100" value="50">
+<span>
+  <btn b>Submit</btn>
+  <btn b2>Cancel</btn>
+</span>
+</cont>
+
+
+<cont yt>
+  <textarea placeholder="Yellow theme textarea..."></textarea>
+<input type="range" min="0" max="100" value="50">
+<span>
+  <btn y>
+<p>Submit</p>
+</btn>
+  <btn y2>Cancel</btn>
+</span>
+</cont>
+
+<cont gt>
+  <textarea placeholder="Green theme textarea..."></textarea><input type="range" min="0" max="100" value="50">
+<span>
+  <btn g>Submit</btn>
+  <btn g2>Cancel</btn>
+</span>
+</cont>
+
+
+
+
+</body>
+</html>
