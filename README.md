@@ -7,7 +7,7 @@ This project focuses on **attribute-based theming**, **explicit colors**, and **
 
 ## What this is
 
-Material CSS is **not a framework**.  
+Material CSS is **not a framework** just a ui set
 It’s a **demo-driven UI system** you can copy, tweak, and extend.
 
 It uses:
