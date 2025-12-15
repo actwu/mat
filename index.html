@@ -213,15 +213,70 @@ background-clip:padding-box;
 cursor:pointer;
 }
 </style>
+<style>
+/* switch base */
+input[type=checkbox][switch]
+{
+appearance:none;
+-webkit-appearance:none;
+cursor:pointer;
+transition:all .25s ease;
+width:40px;
+height:20px;
+min-width:45px;
+border-radius:var(--bdr,999px);
+background:var(--switch-track);
+position:relative;
+}
 
+input[type=checkbox][switch]::before
+{
+content:'';
+position:absolute;
+top:0px;
+left:0;
+width:20px;
+height:20px;
+border-radius:inherit;
+background:var(--switch-knob);
+transition:all .25s ease;
+box-shadow:0 0 0 4px var(--switch-cut);
+}
+
+/* checked state */
+input[type=checkbox][switch]:checked
+{
+background:var(--switch-fill);
+}
+
+input[type=checkbox][switch]:checked::before
+{
+left:24px;
+}
+
+/* locked */
+input[type=checkbox][switch][lock]
+{
+pointer-events:none;
+opacity:.6;
+}
+
+/* theme variables */
+[rt]{--switch-track:#9b4256;--switch-fill:#ffcdd2;--switch-knob:#ffcdd2;--switch-cut:#512230;}
+[bt]{--switch-track:#484d72;--switch-fill:#bbdefb;--switch-knob:#bbdefb;--switch-cut:#262a47;}
+[yt]{--switch-track:#bf7442;--switch-fill:#f4dba4;--switch-knob:#f4dba4;--switch-cut:#563923;}
+[gt]{--switch-track:#3c6d46;--switch-fill:#c8e6c9;--switch-knob:#c8e6c9;--switch-cut:#213225;}
+</style>
 
 <body >
 
 <cont>
-<h1>material</h1>
+
 <h3> UI Demo</h3>
 
 <p>Why i made this?</p> 
+
+<h1>material</h1>
 
 </cont>
 
@@ -250,6 +305,11 @@ cursor:pointer;
 <p>💫 Submit</p>
 </btn>
   <btn r2>Cancel</btn>
+</span><span>
+<input type="checkbox" switch>
+  <input type="checkbox" switch checked>
+  <input type="checkbox" switch lock>
+  <input type="checkbox" switch lock checked>
 </span>
 </cont>
 
@@ -260,6 +320,13 @@ cursor:pointer;
   <btn b>Submit</btn>
   <btn b2>Cancel</btn>
 </span>
+<span>
+<input type="checkbox" switch>
+  <input type="checkbox" switch checked>
+  <input type="checkbox" switch lock>
+  <input type="checkbox" switch lock checked>
+</span>
+
 </cont>
 
 
@@ -272,6 +339,12 @@ cursor:pointer;
 </btn>
   <btn y2>Cancel</btn>
 </span>
+<span>
+<input type="checkbox" switch>
+  <input type="checkbox" switch checked>
+  <input type="checkbox" switch lock>
+  <input type="checkbox" switch lock checked>
+</span>
 </cont>
 
 <cont gt>
@@ -281,7 +354,15 @@ cursor:pointer;
   <btn g>Submit</btn>
   <btn g2>Cancel</btn>
 </span>
+<span>
+<input type="checkbox" switch>
+  <input type="checkbox" switch checked>
+  <input type="checkbox" switch lock>
+  <input type="checkbox" switch lock checked>
+</span>
 </cont>
+
+
 
 <script>
 const paint
@@ -312,4 +393,4 @@ _0.addEventListener('input',paint)
 </script>
 
 </body>
-          </html>
+</html>
