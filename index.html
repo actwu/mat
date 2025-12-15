@@ -36,9 +36,19 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"mat sample","url":"","logo":"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2064%2064'%3E%0A%3Ccircle%20cx%3D'32'%20cy%3D'32'%20r%3D'32'%20fill%3D'%23000000'%2F%3E%0A%3Ctext%20x%3D'32'%20y%3D'46'%20font-size%3D'38'%20font-weight%3D'700'%20text-anchor%3D'middle'%20fill%3D'%23ffffff'%20font-family%3D'Arial'%20letter-spacing%3D'-1'%3E%F0%9F%94%B5%3C%2Ftext%3E%0A%3C%2Fsvg%3E","description":"well just demo of material ui"}</script>
 <style>
-* {border:unset; outline:unset; box-sizing:border-box;}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+<style>
+* {font-family: "Roboto", sans-serif; border:unset; outline:unset; box-sizing:border-box;}
 body {
-  font-family:sans-serif;
+
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+
+  
   padding:20px;
   margin:0 auto;
   max-width:720px;
@@ -47,11 +57,12 @@ body {
   display:flex; flex-direction: column;
   color:#f2f2ff;
 }
+p {font-weight:400;}
 
 h1,h2,h3,p {display:inline-flex;margin:0;}
-h1 {letter-spacing:-1px;font-size:40px;}
-h2 {letter-spacing:-1px;font-size:28px;}
-h3 {letter-spacing:-1px;font-size:20px;}
+h1 {font-weight:500;letter-spacing:-1px;font-size:40px;}
+h2 {font-weight:400;letter-spacing:-1px;font-size:28px;}
+h3 {font-weight:400;letter-spacing:-1px;font-size:20px;}
 
 /* container */
 cont {
@@ -70,7 +81,7 @@ btn {
   align-items:center;
   font-weight:600;
   padding:12px 16px;
-  border-radius:12px;
+  border-radius:25px;
   font-size:16px;
   cursor:pointer;
   user-select:none;
@@ -78,10 +89,11 @@ btn {
 }
 
 /* child spacing */
-btn > * { font-weight:bold; }
+btn > * { font-weight:500; }
 
 /* THEMES */
-::placeholder { color:#ccc; }
+::placeholder { opacity:80%; color:#f2f2ff; }
+:hover::placeholder { opacity:100%; color:#f2f2ff; }
 
 /* RED */
 [r] { background:#ffcdd2; color:#b71c1c; }
@@ -232,8 +244,10 @@ textarea {
 
 <cont>
 <h1>material</h1>
-<h2>html</h2>
 <h3> UI Demo</h3>
+
+<p>Why i made this?</p> 
+
 </cont>
 
 <cont bt>
@@ -284,7 +298,8 @@ textarea {
 </cont>
 
 <cont gt>
-  <textarea placeholder="Green theme textarea..."></textarea><input type="range" min="0" max="100" value="50">
+  <textarea placeholder="Green theme textarea"></textarea>
+<input type="range" min="0" max="100" value="50">
 <span>
   <btn g>Submit</btn>
   <btn g2>Cancel</btn>
