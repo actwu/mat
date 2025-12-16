@@ -163,7 +163,7 @@ textarea {
   padding:12px 14px;
   border-radius:8px;
   flex:1;
-  background:#2b2b2b;
+  background:#262a47;
   color:#fff;
   outline:none;
   transition:border 0.2s, box-shadow 0.2s, background 0.2s;
@@ -214,6 +214,9 @@ cursor:pointer;
 }
 </style>
 <style>
+body:not([rt], [bt], [yt], [gt]){
+--switch-track:#484d72;--switch-fill:#bbdefb;--switch-knob:#bbdefb;--switch-cut:#0b0c16;}
+
 /* switch base */
 input[type=checkbox][switch]
 {
@@ -296,6 +299,22 @@ opacity:.6;
   <btn g2><span>☘️ Macha</span></btn>
 </span>
 
+</cont>
+
+<cont>
+<textarea placeholder="Red theme textarea..."></textarea>
+<input type="range" min="0" max="100" value="50">
+<span>
+  <btn b>
+<p>💫 Submit</p>
+</btn>
+  <btn b2>Cancel</btn>
+</span><span>
+<input type="checkbox" switch>
+  <input type="checkbox" switch checked>
+  <input type="checkbox" switch lock>
+  <input type="checkbox" switch lock checked>
+</span>
 </cont>
 
 <cont rt>
