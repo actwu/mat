@@ -221,9 +221,10 @@ appearance:none;
 -webkit-appearance:none;
 cursor:pointer;
 transition:all .25s ease;
-width:40px;
-height:20px;
-min-width:45px;
+width:25px;
+height:10px;
+margin:10px;
+min-width:25px;
 border-radius:var(--bdr,999px);
 background:var(--switch-track);
 position:relative;
@@ -233,9 +234,9 @@ input[type=checkbox][switch]::before
 {
 content:'';
 position:absolute;
-top:0px;
-left:0;
-width:20px;
+top:-5px;
+left:0px;
+width:10px;
 height:20px;
 border-radius:inherit;
 background:var(--switch-knob);
@@ -251,7 +252,7 @@ background:var(--switch-fill);
 
 input[type=checkbox][switch]:checked::before
 {
-left:24px;
+left:15px;
 }
 
 /* locked */
