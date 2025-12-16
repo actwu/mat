@@ -57,6 +57,15 @@ body {
   display:flex; flex-direction: column;
   color:#f2f2ff;
 }
+
+body:not([rt], [bt], [yt], [gt]){
+--range-fill:#bbdefb;
+--range-track:#484d72;
+--range-cut:#0b0c16;
+
+--switch-track:#484d72;--switch-fill:#bbdefb;--switch-knob:#bbdefb;--switch-cut:#0b0c16
+}
+
 p {font-weight:400;}
 
 h1,h2,h3,p {display:inline-flex;margin:0;}
@@ -175,6 +184,8 @@ textarea {
 </style>
 
 <style>
+
+
 input[type=range]
 {
 appearance:none;
@@ -214,8 +225,6 @@ cursor:pointer;
 }
 </style>
 <style>
-body:not([rt], [bt], [yt], [gt]){
---switch-track:#484d72;--switch-fill:#bbdefb;--switch-knob:#bbdefb;--switch-cut:#0b0c16;}
 
 /* switch base */
 input[type=checkbox][switch]
